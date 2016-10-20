@@ -45,21 +45,10 @@ public class DepartmentAction extends Action{
     }
 
     public List<DepartmentTO> viewAll(ActionForm actionForm, HttpServletRequest request) throws Exception{
-
-        System.out.println("here");
         DepartmentDAO departmentDAO = new DepartmentDAO();
 
         DynaActionForm dynaActionForm = (DynaActionForm) actionForm;
-
         dynaActionForm.set("departmentList", departmentDAO.readAll());
-
-        System.out.println("TEST NAME: "+ departmentDAO.readAll().get(0).getDepartmentName());
-
-        DepartmentTO departmentTO = new DepartmentTO();
-
-        departmentTO.setDepartmentList(departmentDAO.readAll());
-        request.setAttribute("departmentList", departmentDAO.readAll());
-
 
         return departmentDAO.readAll();
 

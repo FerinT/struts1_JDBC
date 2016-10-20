@@ -18,7 +18,7 @@
 </head>
 <body >
 
-<table style="background-color: gainsboro; border: 1px solid black"  >
+<table style="background-color: gainsboro; border: 1px solid black" >
     <tr style="border: 1px solid black">
         <th> Department Name </th>
         <th> location </th>
