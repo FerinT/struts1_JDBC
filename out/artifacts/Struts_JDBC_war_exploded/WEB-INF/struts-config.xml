@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+        "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+
+    <form-beans>
+        <!-- dynamic form to add a department -->
+        <form-bean name="departmentform" type="org.apache.struts.action.DynaActionForm">
+            <form-property name="departmentNumber" type="java.lang.Integer"/>
+            <form-property name="departmentName" type="java.lang.String"/>
+            <form-property name="location" type="java.lang.String"/>
+        </form-bean>
+
+        <form-bean name="departmentformList" type="org.apache.struts.action.DynaActionForm">
+            <form-property name="departmentList" type="java.util.List"/>
+        </form-bean>
+
+
+        <form-bean name="departmentInformation" type="org.apache.struts.action.DynaActionForm">
+            <form-property name="departmentNumber" type="java.lang.Integer"/>
+            <form-property name="departmentName" type="java.lang.String"/>
+            <form-property name="location" type="java.lang.String"/>
+        </form-bean>
+
+    </form-beans>
+
+    <action-mappings>
+        <action name="departmentform" type="main.common.action.DepartmentAction" path="/departmentform" parameter="saveDepartment">
+            <forward name="success" path="/success.jsp"/>
+        </action>
+
+
+        <action name="departmentformList" type="main.common.action.DepartmentAction" path="/departmentformList" parameter="test" >
+            <forward name="success" path="/pages/department/DepartmentView.jsp"/>
+        </action>
+
+        <action name="departmentformList" type="main.common.action.DepartmentAction" path="/departmentNumberList" parameter="departmentNumbers" >
+            <forward name="success" path="/pages/department/DepartmentUpdate.jsp"/>
+        </action>
+
+        <action name="departmentInformation" type="main.common.action.DepartmentAction" path="/departmentInformation" parameter="departmentInformation" >
+            <forward name="success" path="/pages/department/DepartmentUpdate.jsp"/>
+        </action>
+
+        <action name="departmentInformation" type="main.common.action.DepartmentAction" path="/departmentUpdate" parameter="departmentUpdate" >
+            <forward name="success" path="/success.jsp"/>
+        </action>
+
+    </action-mappings>
+
+
+</struts-config>
